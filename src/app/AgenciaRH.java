@@ -1,5 +1,6 @@
 package app;
 
+import gestao.Funcionario;
 import java.util.Scanner;
 
 public class AgenciaRH {
@@ -12,18 +13,27 @@ public class AgenciaRH {
        String cpf_funcionario;
        String endereco_funcionario;
        String setor_funcionario;
+       char confirmacao = 's';
+       
+       Funcionario[] funcionarios = new Funcionario[10];
        
        Scanner input = new Scanner(System.in);
-        
        
-        System.out.println("\t--Agência RH--");
-        System.out.println("Infome os dados do funcionário (10):");
-        System.out.println("Informe CPF:");
-        cpf_funcionario = input.nextLine();
-        System.out.println("Informe o endereço:");
-        endereco_funcionario = input.nextLine();
-        System.out.println("Informe o setor de trabalho:");
-        setor_funcionario = input.nextLine();
+       do{
+           System.out.println("\t--Agência RH--");
+           System.out.println("Infome os dados do funcionário (10):");
+           System.out.println("Informe CPF:");
+           cpf_funcionario = input.next();
+           System.out.println("Informe o endereço:");
+           endereco_funcionario = input.next();
+           System.out.println("Informe o setor de trabalho:");
+           setor_funcionario = input.next();
+        
+           System.out.println("Informar novo funcionario? s/n");
+           confirmacao = input.next().charAt(0);
+           
+       }while(confirmacao == 's');
+        
        
     }
     
