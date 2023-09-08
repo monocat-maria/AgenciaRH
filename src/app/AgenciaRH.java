@@ -81,8 +81,7 @@ public class AgenciaRH {
                + "CPF:" + funcionarioH[i].getCpf()
                + "\nEndereço:" + funcionarioH[i].getEndereco()
                + "\nSetor:" + funcionarioH[i].getSetor()
-               + "\nTelefone:" + funcionarioH[i].getTelefone()
-               +"\nPagamento p/hora:" + funcionarioH[i].getSalario_hora());
+               + "\nTelefone:" + funcionarioH[i].getTelefone());
         System.out.println();
        }
         
