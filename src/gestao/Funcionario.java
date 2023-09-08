@@ -1,6 +1,6 @@
 package gestao;
 
-public class Funcionario {
+public class Funcionario extends Salario {
     private String cpf;
     private String endereco;
     private String setor;
