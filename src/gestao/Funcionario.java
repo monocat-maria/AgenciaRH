@@ -6,8 +6,8 @@ public class Funcionario extends Salario {
     private String setor;
     private String telefone;
 
-   
-    public Funcionario(){        
+    
+    public Funcionario(){       
     }
 
     public Funcionario(String cpf, String endereco, String setor, String telefone) {
@@ -16,7 +16,7 @@ public class Funcionario extends Salario {
         this.setor = setor;
         this.telefone = telefone;
     }
-    
+
     public String getCpf() {
         return cpf;
     }
@@ -49,6 +49,31 @@ public class Funcionario extends Salario {
         this.telefone = telefone;
     }
     
+    @Override
+    public double getSalario_hora() {
+        return salario_hora;
+    }
+
+    @Override
+    public double getTotal_salario_hora() {
+        return total_salario_hora;
+    }
     
- 
+    @Override
+    public double calcularSalario(int horas,double valor_hora, double totalSalario){
+        totalSalario = horas * valor_hora;
+       return totalSalario;
+   }
+   
+    @Override
+    public double calcularSalario(double totalSalario){  
+       return totalSalario;
+   }
+    
+    @Override
+    public double calcularAumento(double valorAumento,double totalSalario,double aumento,double totalAumento){
+        aumento = (valorAumento * totalSalario)/ 100;
+        totalAumento = aumento + totalSalario;
+       return totalAumento;
+   }
 }
