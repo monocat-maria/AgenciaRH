@@ -60,16 +60,6 @@ public class Funcionario extends Salario {
     }
     
     @Override
-    public double getSalario_mes() {
-        return salario_mes;
-    }
-
-    @Override
-    public double getTotal_salario_mes() {
-        return total_salario_mes;
-    }
-    
-    @Override
     public double calcularSalario(int horas,double valor_hora, double totalSalario){
         totalSalario = horas * valor_hora;
        return totalSalario;
