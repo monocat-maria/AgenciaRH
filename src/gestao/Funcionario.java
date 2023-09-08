@@ -6,9 +6,8 @@ public class Funcionario extends Salario {
     private String setor;
     private String telefone;
 
-    
-    public Funcionario(){
-        
+   
+    public Funcionario(){        
     }
 
     public Funcionario(String cpf, String endereco, String setor, String telefone) {
@@ -17,7 +16,7 @@ public class Funcionario extends Salario {
         this.setor = setor;
         this.telefone = telefone;
     }
-
+    
     public String getCpf() {
         return cpf;
     }
