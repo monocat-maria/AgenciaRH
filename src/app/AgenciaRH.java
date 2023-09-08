@@ -82,13 +82,10 @@ public class AgenciaRH {
                + "\nEndereço:" + funcionarioH[i].getEndereco()
                + "\nSetor:" + funcionarioH[i].getSetor()
                + "\nTelefone:" + funcionarioH[i].getTelefone()
-               +"\nPagamento p/hora:" + funcionarioH[i].getSalario_hora());
+               +"\nPagamento p/hora: R$" + funcionarioH[i].getSalario_hora());
         System.out.println();
        }
-        
-       
-        
-       
+      
     }
     
 }
