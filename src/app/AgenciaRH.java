@@ -5,7 +5,7 @@ import java.util.Scanner;
 import pagamento.Assalariado;
 import pagamento.Horista;
 
-public class AgenciaRH {
+public class AgenciaRH extends Funcionario {
 
     public static void main(String[] args) {
        String cpf_funcionario;
@@ -14,22 +14,26 @@ public class AgenciaRH {
        String telefone_funcionario;
        
        double salario_hora_hst;
-       double total_hora_hst = 0;
-       
        double salario_mes_ass;
-       double total_mes_ass = 0;
-       
+ 
        char confirmacao = 's';
-       int i = 0;
+       
        String opcao;
   
        Scanner input = new Scanner(System.in);
        
-       Funcionario[] funcionarioH = new Horista[3];
-       Funcionario[] funcionarioA = new Assalariado[3];
+       Assalariado funcionarioA[] = new Assalariado[3];
+       Horista funcionarioH[] = new Horista[3];
+       for (int i = 0;i < 3;i++){
+           funcionarioH[i] = new Horista(0,"","","","");
+           funcionarioA[i] = new Assalariado(0,"","","","");
+       }
        
+       //resetando contador
+       int i = 0;
        
        do{
+           
            System.out.println("\t--Agência RH--");
            System.out.println("Infome os dados do funcionário (" + (3 - i)  + " cadastros restantes):" );
            
@@ -52,13 +56,13 @@ public class AgenciaRH {
                case "H","h":                   
                    System.out.println("Informe o salário por hora:");
                    salario_hora_hst = input.nextDouble();                  
-                   funcionarioH[i] = new Horista(salario_hora_hst,total_hora_hst,cpf_funcionario,endereco_funcionario,setor_funcionario,telefone_funcionario);
+                   funcionarioH[i] = new Horista(salario_hora_hst,cpf_funcionario,endereco_funcionario,setor_funcionario,telefone_funcionario);
                    i++;
                    break;
                case "A","a":
                    System.out.println("Informe o salário por mês:");
                    salario_mes_ass = input.nextDouble();                  
-                   funcionarioA[i] = new Assalariado(salario_mes_ass,total_mes_ass,cpf_funcionario,endereco_funcionario,setor_funcionario,telefone_funcionario);
+                   funcionarioA[i] = new Assalariado(salario_mes_ass,cpf_funcionario,endereco_funcionario,setor_funcionario,telefone_funcionario);
                    i++;
                    break;                          
                default:
@@ -75,19 +79,27 @@ public class AgenciaRH {
            }          
        }while(confirmacao == 's' && i < 3);
        
-       System.out.println("\n\t--Funcionários Cadastrados--");
-       for(i = 0; i < funcionarioH.length;i++){      
-       System.out.println("Funcionário " + (i + 1) + "\n"
-               + "CPF:" + funcionarioH[i].getCpf()
-               + "\nEndereço:" + funcionarioH[i].getEndereco()
-               + "\nSetor:" + funcionarioH[i].getSetor()
-               + "\nTelefone:" + funcionarioH[i].getTelefone());
-        System.out.println();
-       }
-        
-       
-        
-       
-    }
-    
+       //print
+       System.out.println("\n\t--Funcionários Cadastrados--");      
+       for(i = 0; i < funcionarioA.length;i++){
+           
+           if(!(funcionarioA[i].getCpf().equals(""))){
+              System.out.println("Funcionário " + (i + 1) + "\n"
+                       + "CPF:" + funcionarioA[i].getCpf()
+                       + "\nEndereço:" + funcionarioA[i].getEndereco()
+                       + "\nSetor:" + funcionarioA[i].getSetor()
+                       + "\nTelefone:" + funcionarioA[i].getTelefone()
+                       + "\nSalário:" + funcionarioA[i].getSalario_mes() + " p/mês");
+               System.out.println();
+           }else if(!(funcionarioH[i].getCpf().equals(""))){
+               System.out.println("Funcionário " + (i + 1 ) + "\n"
+                       + "CPF:" + funcionarioH[i].getCpf()                 
+                       + "\nEndereço:" + funcionarioH[i].getEndereco()
+                       + "\nSetor:" + funcionarioH[i].getSetor()
+                       + "\nTelefone:" + funcionarioH[i].getTelefone()
+                       + "\nSalário:" + funcionarioH[i].getSalario_hora() + " p/hora");
+               System.out.println();
+           }                     
+       }      
+    }   
 }

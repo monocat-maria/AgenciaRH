@@ -1,10 +1,11 @@
 package gestao;
 
-public class Funcionario extends Salario {
+public class Funcionario {
     private String cpf;
     private String endereco;
     private String setor;
     private String telefone;
+
 
    
     public Funcionario(){        
@@ -16,7 +17,7 @@ public class Funcionario extends Salario {
         this.setor = setor;
         this.telefone = telefone;
     }
-    
+
     public String getCpf() {
         return cpf;
     }
@@ -48,7 +49,5 @@ public class Funcionario extends Salario {
     public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
-    
-    
- 
+
 }

@@ -1,12 +1,11 @@
 package gestao;
 
-public abstract class Salario {
-    
-    
-   public void calcularSalario(double totalSalario){
-   }
-   
-   public void calcularAumento(double totalAumento){
-        
-   }
+/**
+ *
+ * @author monocat
+ */
+public interface Salario {
+    public double calcularAumento(double salario, double aumento,double valorAumento, double totalSalario);
+    public double calcularSalarioTotal(double horas,double valorHora,double totalSalarioHora);
+    public double calcularSalarioTotal(double salarioMes,double totalSalario);
 }
