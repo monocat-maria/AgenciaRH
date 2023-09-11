@@ -8,13 +8,15 @@ import gestao.Salario;
 public class Horista extends Funcionario implements Salario {
     
     private double salario_hora;
+    private double horas;
 
     public Horista() {
     }
 
-    public Horista(double salario_hora, String cpf, String endereco, String setor, String telefone) {
+    public Horista(double salario_hora,double horas, String cpf, String endereco, String setor, String telefone) {
         super(cpf, endereco, setor, telefone);
         this.salario_hora = salario_hora;
+        this.horas = horas;
     }
 
     public double getSalario_hora() {
@@ -23,6 +25,14 @@ public class Horista extends Funcionario implements Salario {
 
     public void setSalario_hora(double salario_hora) {
         this.salario_hora = salario_hora;
+    }
+
+    public double getHoras() {
+        return horas;
+    }
+
+    public void setHoras(double horas) {
+        this.horas = horas;
     }
     
     @Override

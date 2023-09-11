@@ -2,6 +2,7 @@ package pagamento;
 
 import gestao.Funcionario;
 import gestao.Salario;
+import java.util.Scanner;
 
 
 public class Assalariado extends Funcionario implements Salario {
